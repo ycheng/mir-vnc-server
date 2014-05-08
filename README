@@ -3,3 +3,16 @@ mirvncserver
 
 Currently we don't have vnc server for mir. This is a try.
 
+screencast.cpp:
+	from mir-0.1.9
+dummyvncserver.c:
+	reduced from sample code of libvncserver 0.9.9
+
+dependency:
+	vncserver: libvncserver-dev v0.9.9
+	mirscreencast:
+		libmirclient-dev libmirprotobuf-dev libmirserver-dev
+		libgles2-mesa-dev
+		libboost-program-options-dev
+
+	Currently this also compiled on mir 0.1.8 on trusty.

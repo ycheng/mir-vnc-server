@@ -1,5 +1,5 @@
 
-BINS=dummyvncserver mirscreencast
+BINS=dummyvncserver mirvncserver # mirscreencast
 
 all: $(BINS)
 
@@ -16,6 +16,12 @@ screencast.o: screencast.cpp
 
 mirscreencast: screencast.o
 	$(CXX) screencast.o -o mirscreencast $(MIRLIBS)
+
+mirvncserver.o: mirvncserver.cpp
+	$(CXX) mirvncserver.cpp -c $(MIRCFLAGS)
+
+mirvncserver: mirvncserver.o
+	$(CXX) mirvncserver.o -o mirvncserver $(MIRLIBS) $(VNCLIBS)
 
 clean:
 	rm $(BINS) *.o
